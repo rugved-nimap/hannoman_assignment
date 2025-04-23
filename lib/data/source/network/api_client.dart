@@ -1,9 +1,7 @@
 import 'dart:async';
 import 'dart:io';
-
 import 'package:dio/dio.dart';
-
-import '../interceptor/logging_interceptor.dart';
+import 'logging_interceptor.dart';
 
 class ApiClient {
   ApiClient._();

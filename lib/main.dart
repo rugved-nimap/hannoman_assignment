@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:rugved_assignment/config/domain/api_client.dart';
+import 'package:rugved_assignment/data/source/network/api_client.dart';
 import 'package:rugved_assignment/presentation/screens/splash_screen.dart';
+import 'package:rugved_assignment/themes/app_theme.dart';
 import 'package:rugved_assignment/themes/colors.dart';
 
 import 'presentation/binding/initial_binding.dart';
@@ -19,10 +20,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: "Poppins",
-        progressIndicatorTheme: ProgressIndicatorThemeData(color: grey)
-      ),
+      theme: AppTheme().data(),
       home: const SplashScreen(),
       initialBinding: InitialBinding(),
       builder: (context, child) {

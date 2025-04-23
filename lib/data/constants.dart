@@ -1,9 +1,4 @@
- // Image Assets
-
-
-
-
-
+// Image Assets
 
 const String houseOutlinedIcon = "assets/svg/house_outlined.svg";
 const String houseFilledIcon = "assets/svg/house_filled.svg";
@@ -21,8 +16,4 @@ const String noRepositoryFound = "assets/svg/no_repository_found.svg";
 const String noUserFound = "assets/svg/no_user_found.svg";
 const String noInternet = "assets/svg/no_internet.svg";
 
-
 const String searchAnimationLottie = "assets/lotties/search_animation.json";
-
-
-

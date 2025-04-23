@@ -130,63 +130,64 @@ class _UserProfileDetailScreenState extends State<UserProfileDetailScreen> {
             SizedBox(
               height: 200,
               child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  physics: BouncingScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    return Container(
-                      width: 300,
-                      decoration: BoxDecoration(color: Colors.grey.shade900, borderRadius: BorderRadius.circular(8)),
-                      padding: const EdgeInsets.all(18),
-                      margin: EdgeInsets.symmetric(horizontal: 4),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              CircleAvatar(
-                                radius: 15,
-                                backgroundColor: Colors.blue,
-                                backgroundImage: NetworkImage(widget.user.avatarUrl),
-                              ),
-                              const SizedBox(width: 5),
-                              Text(
-                                "@${widget.user.login}",
-                                style: TextStyle(color: Colors.grey.shade400, fontSize: 14),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 10),
-                          Text(
-                            'Spoon-Knife',
-                            style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
-                          ),
-                          const SizedBox(height: 8),
-                          Expanded(
-                            child: Text(
-                              'This repo is for demonstration purposes only',
-                              style: TextStyle(color: Colors.grey.shade500, fontSize: 13),
-                              maxLines: 8,
+                scrollDirection: Axis.horizontal,
+                itemCount: 4,
+                physics: BouncingScrollPhysics(),
+                itemBuilder: (context, index) {
+                  return Container(
+                    width: 300,
+                    decoration: BoxDecoration(color: Colors.grey.shade900, borderRadius: BorderRadius.circular(8)),
+                    padding: const EdgeInsets.all(18),
+                    margin: EdgeInsets.symmetric(horizontal: 4),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 15,
+                              backgroundColor: Colors.blue,
+                              backgroundImage: NetworkImage(widget.user.avatarUrl),
                             ),
+                            const SizedBox(width: 5),
+                            Text(
+                              "@${widget.user.login}",
+                              style: TextStyle(color: Colors.grey.shade400, fontSize: 14),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 10),
+                        Text(
+                          'Spoon-Knife',
+                          style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
+                        ),
+                        const SizedBox(height: 8),
+                        Expanded(
+                          child: Text(
+                            'This repo is for demonstration purposes only',
+                            style: TextStyle(color: Colors.grey.shade500, fontSize: 13),
+                            maxLines: 8,
                           ),
-                          Row(
-                            spacing: 15,
-                            children: [
-                              IconLabel(labelText: "12932", icon: Icons.star_border_rounded, textColor: grey),
-                              Row(
-                                spacing: 5,
-                                children: [
-                                  Container(height: 8, width: 8, decoration: BoxDecoration(color: Colors.red, borderRadius: BorderRadius.circular(30))),
-                                  Text('HTML', style: TextStyle(color: Colors.grey.shade300, fontSize: 16, fontWeight: FontWeight.bold)),
-                                ],
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                    );
-                  },
-                  itemCount: 4),
-            ).paddingOnly(bottom: 20)
+                        ),
+                        Row(
+                          spacing: 15,
+                          children: [
+                            IconLabel(labelText: "12932", icon: Icons.star_border_rounded, textColor: grey),
+                            Row(
+                              spacing: 5,
+                              children: [
+                                Container(height: 8, width: 8, decoration: BoxDecoration(color: Colors.red, borderRadius: BorderRadius.circular(30))),
+                                Text('HTML', style: TextStyle(color: Colors.grey.shade300, fontSize: 16, fontWeight: FontWeight.bold)),
+                              ],
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ).paddingOnly(bottom: 20),
           ],
         ),
       ),

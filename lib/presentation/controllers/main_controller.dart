@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:rugved_assignment/config/domain/api_client.dart';
+import 'package:rugved_assignment/data/source/network/api_client.dart';
 import 'package:rugved_assignment/data/constants.dart';
 import '../../data/models/user_model.dart';
-import '../../services/database_service.dart';
+import '../../data/source/locale/database_service.dart';
 import '../screens/explore_screen.dart';
 import '../screens/home_screen.dart';
 import '../screens/notification_screen.dart';
@@ -36,7 +36,7 @@ class MainController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    getRecentSearchList();
+    getAllRecentSearchList();
 
     debounce(
       searchQuery,
@@ -57,7 +57,7 @@ class MainController extends GetxController {
     update();
   }
 
-  void getRecentSearchList() async {
+  void getAllRecentSearchList() async {
     recentSearchList = await databaseService.getSearchesList();
     update();
   }
